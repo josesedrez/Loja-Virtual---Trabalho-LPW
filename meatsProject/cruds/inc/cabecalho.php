@@ -150,6 +150,16 @@ require_once('inc/conexao.php');
             echo $html;
             unset($_SESSION['msg']);
       }
+
+       else if($_SESSION['msg'] == 'usuario_existente') {
+            $html = '
+            <div class="alert alert-danger alert-dismissible fade show">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <strong>Usuário já existente!</strong> Você não pode cadastrar o mesmo usuário duas vezes!
+            </div><br><br><br>';
+            echo $html;
+            unset($_SESSION['msg']);
+      }
             
     }
     else{

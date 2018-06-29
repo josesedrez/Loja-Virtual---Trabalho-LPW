@@ -9,13 +9,18 @@
 		$sql3 = "SELECT email FROM usuario WHERE email = '$email' AND id_user!='$id_user'";
 		$resultado3 = pg_query($conexao, $sql3);
 
-				if(pg_num_rows($resultado3) == 0){ 
+				if(pg_num_rows($resultado3) == 0){
 
 			$sql = "UPDATE usuario SET email='$email', senha='$senha' WHERE id_user='$id_user'";
 			$altera=pg_query($conexao,$sql);
 			$_SESSION['msg'] = 'user_editado';
 			header('Location: crud_user.php');
+		} else {
+			$_SESSION['msg'] = 'usuario_existente';
+			header('Location: crud_user.php');
+
 		}
+
 	}
 		
 	
