@@ -131,6 +131,25 @@ require_once('inc/conexao.php');
             echo $html;
             unset($_SESSION['msg']);
       }
+      else if($_SESSION['msg'] == 'usuario_excluido') {
+            $html = '
+            <div class="alert alert-success alert-dismissible fade show">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <strong>Usuário excluido com sucesso!</strong> O usuário já foi retirado do Meats!
+            </div><br><br><br>';
+            echo $html;
+            unset($_SESSION['msg']);
+      }
+
+      else if($_SESSION['msg'] == 'user_editado') {
+            $html = '
+            <div class="alert alert-success alert-dismissible fade show">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <strong>Usuário editado com sucesso!</strong> O usuário já foi atualizado!
+            </div><br><br><br>';
+            echo $html;
+            unset($_SESSION['msg']);
+      }
             
     }
     else{
